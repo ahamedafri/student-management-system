@@ -12,6 +12,15 @@
         </tr>
     </thead>
     <tbody>
-
+  {{#each rows}}
+   <tr>
+    <td>{{this.ID}}</td>
+    <td>{{this.NAME}}</td>
+    <td>{{this.AGE}}</td>
+    <td>{{this.CITY}}</td>
+    <td><a class="edit" href="{{this.ID}}">Edit</a></td>
+    <td><a class="delete" href="{{this.ID}}">Delete</a></td>
+   </tr>
+  {{/each}}
     </tbody>
 </table>

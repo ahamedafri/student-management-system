@@ -6,7 +6,7 @@ const exphbs = require("express-handlebars");
 // this package is used to get data in json format
 const bodyParser = require("body-parser"); 
 
-const mysql = require("mysql");
+//const mysql = require("mysql");
 
 //
 require('dotenv').config();
@@ -28,6 +28,8 @@ app.set("view engine","hbs");
 
 
 //Mysql
+
+/*
 const con = mysql.createPool({
     connectionLimit:10,
     host     : process.env.DB_HOST,
@@ -42,15 +44,18 @@ con.getConnection((err,connection)=>{
     console.log("Connection Success")
 });
 
+*/
 
-
-
+/*
 //router
 app.get('/',(req,res)=>{
     res.render("home");
 });
 
+*/
 
+const routes = require("./server/routes/students");
+app.use('/',routes);
 
 
 
